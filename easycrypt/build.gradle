@@ -46,9 +46,8 @@ android {
             useProguard false
         }
         release {
-            minifyEnabled true
+            minifyEnabled false
             debuggable false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
