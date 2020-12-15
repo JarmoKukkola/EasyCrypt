@@ -81,11 +81,15 @@ class FragmentSymmetricFile :Fragment(),AnkoLogger,ECResultListener {
             when (requestCode) {
                 _rCEncrypt -> {
                     tvStatus.text = resources.getString(R.string.tv_status_encrypting)
-                    eCryptSymmetric.encrypt(fis, edPasswordF.text.toString(), this)
+                    GlobalScope.launch(Dispatchers.Default) {
+                        eCryptSymmetric.encrypt(fis,edPasswordF.text.toString(),this@FragmentSymmetricFile)
+                    }
                 }
                 _rCDecrypt -> {
                     tvStatus.text = resources.getString(R.string.tv_status_decrypting)
-                    eCryptSymmetric.decrypt(fis, edPasswordF.text.toString(), this)
+                    GlobalScope.launch(Dispatchers.Default) {
+                        eCryptSymmetric.decrypt(fis,edPasswordF.text.toString(),this@FragmentSymmetricFile)
+                    }
                 }
             }
         }

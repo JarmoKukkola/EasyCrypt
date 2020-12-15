@@ -92,7 +92,6 @@ class ECSymmetric(transformation: ECSymmetricTransformations
                     @NotNull password: String,
                     @NotNull erl: ECResultListener,
                     @NotNull outputFile: File = File(Constants.DEF_ENCRYPTED_FILE_PATH)) {
-        doAsync {
 
             val tPass = password.trim()
 
@@ -108,7 +107,7 @@ class ECSymmetric(transformation: ECSymmetricTransformations
                 is File -> {
                     if (!input.exists() || input.isDirectory) {
                         erl.onFailure(Constants.ERR_NO_SUCH_FILE, NoSuchFileException(input))
-                        return@doAsync
+                        return
                     }
                     val encryptedFile =
                             if (outputFile.absolutePath == Constants.DEF_ENCRYPTED_FILE_PATH)
@@ -120,7 +119,6 @@ class ECSymmetric(transformation: ECSymmetricTransformations
                 else -> performEncrypt.invoke(input, tPass, cipher,
                         { pass, salt -> getKey(pass, salt) }, erl, outputFile)
             }
-        }
     }
 
     /**
@@ -156,7 +154,6 @@ class ECSymmetric(transformation: ECSymmetricTransformations
                     @NotNull password: String,
                     @NotNull erl: ECResultListener,
                     @NotNull outputFile: File = File(Constants.DEF_DECRYPTED_FILE_PATH)) {
-        doAsync {
 
             val tPass = password.trim()
 
@@ -185,7 +182,7 @@ class ECSymmetric(transformation: ECSymmetricTransformations
 
                     if (!input.exists() || input.isDirectory) {
                         erl.onFailure(Constants.ERR_NO_SUCH_FILE, NoSuchFileException(input))
-                        return@doAsync
+                        return
                     }
 
                     val decryptedFile =
@@ -200,5 +197,4 @@ class ECSymmetric(transformation: ECSymmetricTransformations
                         { pass, salt -> getKey(pass, salt) }, erl, outputFile)
             }
         }
-    }
 }
