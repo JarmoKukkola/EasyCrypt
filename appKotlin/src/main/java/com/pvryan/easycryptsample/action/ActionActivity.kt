@@ -31,11 +31,11 @@ class ActionActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = intent.extras[Constants.TITLE] as String
-        supportActionBar?.subtitle = intent.extras[Constants.SUB_TITLE] as String
+        supportActionBar?.title = intent.extras?.getString(Constants.TITLE)
+        supportActionBar?.subtitle = intent.extras?.getString(Constants.SUB_TITLE)
 
         val fragmentTransaction = supportFragmentManager.beginTransaction()
-        when (intent.extras[Card.ACTION]) {
+        when (intent.extras?.getInt(Card.ACTION)) {
 
             Card.actionTypeSString -> {
                 fragmentTransaction.replace(R.id.container, FragmentSymmetricString.newInstance(),

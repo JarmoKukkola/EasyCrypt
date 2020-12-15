@@ -32,7 +32,7 @@ class AboutActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = intent.extras[Constants.TITLE] as String
+        supportActionBar?.title = intent.extras?.getString(Constants.TITLE)
 
         val packageInfo = packageManager.getPackageInfo(packageName, 0)
         val appVersionElement = Element()

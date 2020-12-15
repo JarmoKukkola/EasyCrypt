@@ -70,7 +70,7 @@ class FragmentSymmetricString : Fragment(), ECResultListener {
         val clipboard = activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         tvResultS.setOnLongClickListener {
             val data = ClipData.newPlainText("result", tvResultS.text)
-            clipboard.primaryClip = data
+            clipboard.setPrimaryClip(data)
             view.snackLong("Result copied to clipboard")
             true
         }

@@ -71,7 +71,7 @@ class FragmentSymmetricFile : Fragment(), AnkoLogger, ECResultListener {
 
         if (resultCode == Activity.RESULT_OK) {
 
-            val fis = context?.contentResolver?.openInputStream(data?.data)
+            val fis = context?.contentResolver?.openInputStream(data?.data!!)
 
             progressBarF.show()
 

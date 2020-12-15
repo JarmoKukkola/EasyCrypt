@@ -1,22 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.github.triplet.play'
-apply from: 'https://raw.githubusercontent.com/pvasa/androidscripts/master/load-properties.gradle'
-
-def keyPass = "${keyPassword}"
-def storePass = "${storePassword}"
 
 android {
-
-    signingConfigs {
-        release {
-            keyAlias "android-release"
-            keyPassword keyPass
-            storeFile file("${storeFilePath}/keystore.jks")
-            storePassword storePass
-        }
-    }
 
     compileSdkVersion rootProject.ext.compileSdk
 
@@ -27,7 +13,6 @@ android {
         versionCode rootProject.ext.easyCryptSampleCode
         versionName rootProject.ext.easyCryptSample
         vectorDrawables.useSupportLibrary = true
-        signingConfig signingConfigs.release
     }
 
     buildTypes {
@@ -36,14 +21,13 @@ android {
             minifyEnabled true
             debuggable true
             applicationIdSuffix ".debug"
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
             shrinkResources true
             minifyEnabled true
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
 
@@ -86,25 +70,6 @@ android {
             universalApk false
         }
     }
-}
-
-play {
-    serviceAccountEmail = ''
-    pk12File = file('../scripts/deployment/key.p12')
-
-    track = 'production' // Or any of 'rollout', 'beta', 'alpha' or 'internal'
-    // userFraction = 0.2 // Only necessary for 'rollout'. The default is 0.1 (10%).
-    // untrackOld = true // Will untrack 'alpha' if needed to upload higher version to 'beta'
-
-    /**
-     * Title: 50 characters
-     * Short description: 80 characters
-     * Full description: 4000 characters
-     * Recent changes: 500 characters
-     */
-    errorOnSizeLimit = false // Unless checking listing sizes on each commit
-
-    uploadImages = false // Enable only if updating images
 }
 
 dependencies {

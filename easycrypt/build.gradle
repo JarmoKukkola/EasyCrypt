@@ -35,15 +35,6 @@ def storePass = "${storePassword}"
 
 android {
 
-    signingConfigs {
-        release {
-            keyAlias 'android-release'
-            keyPassword keyPass
-            storeFile file("${storeFilePath}/keystore.jks")
-            storePassword storePass
-        }
-    }
-
     compileSdkVersion rootProject.ext.compileSdk
 
     defaultConfig {
@@ -51,7 +42,6 @@ android {
         targetSdkVersion rootProject.ext.targetSdk
         versionCode rootProject.ext.easyCryptCode
         versionName rootProject.ext.easyCrypt
-        signingConfig signingConfigs.release
         consumerProguardFiles 'proguard-rules.pro'
     }
 
@@ -66,7 +56,6 @@ android {
             minifyEnabled true
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
 

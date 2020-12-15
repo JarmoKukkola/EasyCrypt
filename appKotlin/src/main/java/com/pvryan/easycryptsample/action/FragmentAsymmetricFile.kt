@@ -67,13 +67,13 @@ class FragmentAsymmetricFile : Fragment(), AnkoLogger, ECResultListener {
         val clipboard = activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         rlPublicKeyTitleF.setOnLongClickListener {
             val data = ClipData.newPlainText("result", tvPublicKeyF.text)
-            clipboard.primaryClip = data
+            clipboard.setPrimaryClip(data)
             view.snackLong("Public key copied to clipboard")
             true
         }
         rlPrivateKeyTitleF.setOnLongClickListener {
             val data = ClipData.newPlainText("result", tvPrivateKeyF.text)
-            clipboard.primaryClip = data
+            clipboard.setPrimaryClip(data)
             view.snackLong("Secure private key copied to clipboard")
             true
         }
@@ -145,7 +145,7 @@ class FragmentAsymmetricFile : Fragment(), AnkoLogger, ECResultListener {
 
         if (resultCode == Activity.RESULT_OK) {
 
-            val fis = context?.contentResolver?.openInputStream(data?.data)
+            val fis = context?.contentResolver?.openInputStream(data!!.data!!)
 
             val password = edPasswordF.text.toString()
 

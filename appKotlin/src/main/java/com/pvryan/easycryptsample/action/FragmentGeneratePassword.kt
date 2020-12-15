@@ -48,7 +48,7 @@ class FragmentGeneratePassword : Fragment() {
         val clipboard = activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         llOutputTitleP.setOnLongClickListener {
             val data = ClipData.newPlainText("result", tvResultP.text)
-            clipboard.primaryClip = data
+           clipboard.setPrimaryClip(data)
             view.snackShort("Output copied to clipboard")
             true
         }
@@ -75,7 +75,7 @@ class FragmentGeneratePassword : Fragment() {
             try {
                 eCPasswords.genRandomOrgPassword(
                         edLengthP.text.toString().toNumber(Constants.DEFAULT_PASSWORD_LENGTH),
-                        defaultSharedPreferences.getString(getString(R.string.pref_api_key), ""),
+                        defaultSharedPreferences.getString(getString(R.string.pref_api_key), "")!!,
                         object : ECPasswordListener {
 
                             override fun onFailure(message: String, e: Exception) {

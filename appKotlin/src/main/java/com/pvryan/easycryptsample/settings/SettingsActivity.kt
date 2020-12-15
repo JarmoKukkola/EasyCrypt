@@ -33,7 +33,7 @@ class SettingsActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = intent.extras[Constants.TITLE] as String
+        supportActionBar?.title = intent.extras!!.getString(Constants.TITLE)
 
         fragmentManager.beginTransaction().replace(R.id.container, SettingsFragment()).commit()
     }
@@ -50,7 +50,7 @@ class SettingsActivity : AppCompatActivity() {
             val prefApiKey = getString(R.string.pref_api_key)
             preference = findPreference(prefApiKey)
 
-            if (!defaultSharedPreferences.getString(prefApiKey, "").isBlank()) {
+            if (!defaultSharedPreferences.getString(prefApiKey, "")!!.isBlank()) {
                 preference.summary = getString(R.string.summary_set)
             }
         }
@@ -72,7 +72,7 @@ class SettingsActivity : AppCompatActivity() {
 
             when (key) {
                 getString(R.string.pref_api_key) -> {
-                    val apiKey = defaultSharedPreferences.getString(key, "")
+                    val apiKey = defaultSharedPreferences.getString(key, "")!!
                     if (apiKey.isBlank()) {
                         preference.summary = getString(R.string.summary_not_set)
                     } else {

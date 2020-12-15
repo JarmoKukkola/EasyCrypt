@@ -69,19 +69,19 @@ class FragmentAsymmetricString : Fragment(), ECResultListener {
         val clipboard = activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         rlPublicKeyTitleS.setOnLongClickListener {
             val data = ClipData.newPlainText("result", tvPublicKeyS.text)
-            clipboard.primaryClip = data
+            clipboard.setPrimaryClip(data)
             view.snackLong("Public key copied to clipboard")
             true
         }
         rlPrivateKeyTitleS.setOnLongClickListener {
             val data = ClipData.newPlainText("result", tvPrivateKeyS.text)
-            clipboard.primaryClip = data
+            clipboard.setPrimaryClip(data)
             view.snackLong("Secure private key copied to clipboard")
             true
         }
         rlOutputTitleS.setOnLongClickListener {
             val data = ClipData.newPlainText("result", tvResultS.text)
-            clipboard.primaryClip = data
+            clipboard.setPrimaryClip(data)
             view.snackLong("Output copied to clipboard")
             true
         }
