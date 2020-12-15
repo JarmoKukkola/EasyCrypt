@@ -18,7 +18,7 @@ package com.pvryan.easycryptsample.action
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,7 +34,7 @@ import kotlinx.android.synthetic.main.fragment_hash_file.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.support.v4.onUiThread
 
-class FragmentHashFile : Fragment(), AnkoLogger, ECResultListener {
+class FragmentHashFile :Fragment(),AnkoLogger,ECResultListener {
 
     private val _rCHash = 2
     private val eCryptHash = ECHash()
@@ -118,6 +118,6 @@ class FragmentHashFile : Fragment(), AnkoLogger, ECResultListener {
     }
 
     companion object {
-        fun newInstance(): Fragment = FragmentHashFile()
+        fun newInstance():Fragment = FragmentHashFile()
     }
 }

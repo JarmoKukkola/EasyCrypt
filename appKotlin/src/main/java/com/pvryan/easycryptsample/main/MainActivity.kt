@@ -19,10 +19,10 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Environment
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        val mRecyclerView: RecyclerView = findViewById(R.id.container)
+        val mRecyclerView:RecyclerView = findViewById(R.id.container)
         mRecyclerView.setHasFixedSize(false)
         mRecyclerView.layoutManager = LinearLayoutManager(this)
         mRecyclerView.adapter = MainAdapter(initCards())

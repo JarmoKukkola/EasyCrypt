@@ -19,7 +19,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,7 +34,7 @@ import org.jetbrains.anko.support.v4.defaultSharedPreferences
 import org.jetbrains.anko.support.v4.onUiThread
 import java.security.InvalidParameterException
 
-class FragmentGeneratePassword : Fragment() {
+class FragmentGeneratePassword :Fragment() {
 
     private val eCPasswords = ECKeys()
 
@@ -93,6 +93,6 @@ class FragmentGeneratePassword : Fragment() {
     }
 
     companion object {
-        fun newInstance(): Fragment = FragmentGeneratePassword()
+        fun newInstance():Fragment = FragmentGeneratePassword()
     }
 }

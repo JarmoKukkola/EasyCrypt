@@ -66,7 +66,7 @@ android {
 }
 
 dependencies {
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.support}"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${rootProject.ext.kotlin}"
     implementation "org.jetbrains.anko:anko-commons:${rootProject.ext.anko}"
     implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit}"

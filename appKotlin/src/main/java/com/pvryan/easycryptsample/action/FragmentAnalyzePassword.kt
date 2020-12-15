@@ -17,7 +17,7 @@ package com.pvryan.easycryptsample.action
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -29,7 +29,7 @@ import com.pvryan.easycryptsample.R
 import kotlinx.android.synthetic.main.fragment_analyze_password.*
 import java.util.*
 
-class FragmentAnalyzePassword : Fragment() {
+class FragmentAnalyzePassword :Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_analyze_password, container, false)
@@ -72,6 +72,6 @@ class FragmentAnalyzePassword : Fragment() {
     }
 
     companion object {
-        fun newInstance(): Fragment = FragmentAnalyzePassword()
+        fun newInstance():Fragment = FragmentAnalyzePassword()
     }
 }

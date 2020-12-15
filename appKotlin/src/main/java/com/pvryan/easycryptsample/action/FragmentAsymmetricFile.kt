@@ -23,7 +23,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,7 +46,7 @@ import java.security.interfaces.RSAPublicKey
 import java.security.spec.InvalidKeySpecException
 
 @SuppressLint("SetTextI18n")
-class FragmentAsymmetricFile : Fragment(), AnkoLogger, ECResultListener {
+class FragmentAsymmetricFile :Fragment(),AnkoLogger,ECResultListener {
 
     private val _rCEncrypt = 2
     private val _rCDecrypt = 3
@@ -334,6 +334,6 @@ class FragmentAsymmetricFile : Fragment(), AnkoLogger, ECResultListener {
     }
 
     companion object {
-        fun newInstance(): Fragment = FragmentAsymmetricFile()
+        fun newInstance():Fragment = FragmentAsymmetricFile()
     }
 }

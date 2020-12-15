@@ -20,7 +20,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +35,7 @@ import com.pvryan.easycryptsample.extensions.snackLong
 import kotlinx.android.synthetic.main.fragment_hash_string.*
 import org.jetbrains.anko.support.v4.onUiThread
 
-class FragmentHashString : Fragment(), ECResultListener {
+class FragmentHashString :Fragment(),ECResultListener {
 
     private val eCryptHash = ECHash()
 
@@ -99,6 +99,6 @@ class FragmentHashString : Fragment(), ECResultListener {
     }
 
     companion object {
-        fun newInstance(): Fragment = FragmentHashString()
+        fun newInstance():Fragment = FragmentHashString()
     }
 }

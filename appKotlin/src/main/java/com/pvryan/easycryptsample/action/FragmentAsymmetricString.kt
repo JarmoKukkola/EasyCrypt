@@ -22,7 +22,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,7 +46,7 @@ import java.security.interfaces.RSAPublicKey
 import java.security.spec.InvalidKeySpecException
 
 @SuppressLint("SetTextI18n")
-class FragmentAsymmetricString : Fragment(), ECResultListener {
+class FragmentAsymmetricString :Fragment(),ECResultListener {
 
     private val eCryptSymmetric = ECSymmetric()
     private val eCryptAsymmetric = ECAsymmetric()
@@ -315,6 +315,6 @@ class FragmentAsymmetricString : Fragment(), ECResultListener {
     }
 
     companion object {
-        fun newInstance(): Fragment = FragmentAsymmetricString()
+        fun newInstance():Fragment = FragmentAsymmetricString()
     }
 }

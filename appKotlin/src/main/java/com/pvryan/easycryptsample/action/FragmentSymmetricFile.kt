@@ -18,7 +18,7 @@ package com.pvryan.easycryptsample.action
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,7 +34,7 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.support.v4.onUiThread
 import java.io.File
 
-class FragmentSymmetricFile : Fragment(), AnkoLogger, ECResultListener {
+class FragmentSymmetricFile :Fragment(),AnkoLogger,ECResultListener {
 
     private val _rCEncrypt = 2
     private val _rCDecrypt = 3
@@ -122,6 +122,6 @@ class FragmentSymmetricFile : Fragment(), AnkoLogger, ECResultListener {
     }
 
     companion object {
-        fun newInstance(): Fragment = FragmentSymmetricFile()
+        fun newInstance():Fragment = FragmentSymmetricFile()
     }
 }
