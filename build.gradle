@@ -40,11 +40,8 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin"
 
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintray"
         classpath "com.github.dcendents:android-maven-gradle-plugin:$maven"
 
-        // Google play publisher
-        classpath "com.github.triplet.gradle:play-publisher:$publish"
     }
 }
 

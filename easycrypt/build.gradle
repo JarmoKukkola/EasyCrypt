@@ -28,11 +28,6 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
-apply from: 'https://raw.githubusercontent.com/pvasa/androidscripts/master/load-properties.gradle'
-
-def keyPass = "${keyPassword}"
-def storePass = "${storePassword}"
-
 android {
 
     compileSdkVersion rootProject.ext.compileSdk
@@ -85,6 +80,3 @@ tasks.withType(Javadoc) {
     options.addStringOption('charSet', 'UTF-8')
     enabled = false
 }
-
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/pvasa/androidscripts/master/bintray.gradle'
