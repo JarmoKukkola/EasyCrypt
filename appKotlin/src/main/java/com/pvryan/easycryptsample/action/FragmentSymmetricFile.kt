@@ -30,8 +30,11 @@ import com.pvryan.easycryptsample.extensions.show
 import com.pvryan.easycryptsample.extensions.snackLong
 import com.pvryan.easycryptsample.extensions.snackShort
 import kotlinx.android.synthetic.main.fragment_symmetric_file.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.support.v4.onUiThread
+import org.jetbrains.anko.support.v4.runOnUiThread
 import java.io.File
 
 class FragmentSymmetricFile :Fragment(),AnkoLogger,ECResultListener {
@@ -91,7 +94,7 @@ class FragmentSymmetricFile :Fragment(),AnkoLogger,ECResultListener {
     private var maxSet = false
     override fun onProgress(newBytes: Int, bytesProcessed: Long, totalBytes: Long) {
         if (totalBytes > -1) {
-            onUiThread {
+            runOnUiThread {
                 if (!maxSet) {
                     progressBarF.isIndeterminate = false
                     progressBarF.max = (totalBytes / 1024).toInt()
@@ -103,7 +106,7 @@ class FragmentSymmetricFile :Fragment(),AnkoLogger,ECResultListener {
     }
 
     override fun <T> onSuccess(result: T) {
-        onUiThread {
+        runOnUiThread {
             progressBarF.hide()
             tvStatus.text = getString(R.string.tv_status_idle)
             tvResultF.text = resources.getString(
@@ -114,7 +117,7 @@ class FragmentSymmetricFile :Fragment(),AnkoLogger,ECResultListener {
 
     override fun onFailure(message: String, e: Exception) {
         e.printStackTrace()
-        onUiThread {
+        runOnUiThread {
             progressBarF.hide()
             tvStatus.text = getString(R.string.tv_status_idle)
             llContentSFile.snackLong("Error: $message")
