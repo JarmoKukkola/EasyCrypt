@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/EasyCrypt.iml" filepath="$PROJECT_DIR$/.idea/modules/EasyCrypt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appKotlin/EasyCrypt.appKotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/appKotlin/EasyCrypt.appKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/EasyCrypt.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/EasyCrypt.buildSrc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/easycrypt/EasyCrypt.easycrypt.iml" filepath="$PROJECT_DIR$/.idea/modules/easycrypt/EasyCrypt.easycrypt.iml" />
     </modules>
